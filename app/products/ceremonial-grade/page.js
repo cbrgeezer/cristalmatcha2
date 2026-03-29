@@ -131,7 +131,7 @@ export default function ProductDetailPage() {
             <article>
               <div className="tasting-icon">◎</div>
               <h3>Umami</h3>
-              <p>Rich, savory depth that coats the palate like cream.</p>
+              <p>Rich, savoury depth that coats the palate like cream.</p>
             </article>
           </div>
         </section>

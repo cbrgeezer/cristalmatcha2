@@ -1,5 +1,5 @@
-import Footer from "../../components/Footer";
 import SiteHeader from "../../components/SiteHeader";
+import Footer from "../../components/Footer";
 import CartClient from "./CartClient";
 
 export const metadata = {

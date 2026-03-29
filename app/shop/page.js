@@ -1,5 +1,5 @@
-import Footer from "../../components/Footer";
 import SiteHeader from "../../components/SiteHeader";
+import Footer from "../../components/Footer";
 import { catalogProducts } from "../../components/ritualData";
 import ShopClient from "./ShopClient";
 
@@ -17,10 +17,7 @@ export default function ShopPage() {
         <header className="catalog-header">
           <div>
             <span className="eyebrow">The Collection</span>
-            <h1>
-              Cultivated <br />
-              <i>Calm</i>
-            </h1>
+            <h1>Cultivated <br /><i>Calm</i></h1>
           </div>
           <div className="catalog-intro">
             <p>

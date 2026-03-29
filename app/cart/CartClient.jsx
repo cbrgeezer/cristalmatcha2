@@ -101,13 +101,6 @@ export default function CartClient() {
             <span>Carbon Neutral</span>
           </div>
         </div>
-        <div className="cart-botanical">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6k3XitpgDKE1rNmlzC0y7WLtloTRVZQwGYP3FmTAsk5vzpGv-bX-YjJPBu2dIMhM_LSlKKc93cU5aVKRp-TVSRjgdu9X7L8jBV8wwubDPFVJlaUXf8dc5oytr-6aj427cBOkXlOXh7YlD3yooWbleONx6mfb_JHReETrO4Vdh_4BfJwm8UjV8lD6Dq3066ShKWQO3vlfp0y46xCPzHvgsiMX3HCV0B80S4VYw6wIMUd5roKRydeivsBUfB-0XZBLgwLuVwrMV8ZM"
-            alt="Botanical shadow"
-            loading="lazy"
-          />
-        </div>
       </aside>
     </div>
   );
