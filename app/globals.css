@@ -222,16 +222,16 @@ button { cursor: pointer; font-family: inherit; }
   padding: 0 1.5rem; overflow: hidden;
   border-right: 1px solid var(--outline);
 }
-.panel-brand-inner { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: space-between; padding: 3.5rem 0; }
+.panel-brand-inner { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; gap: 0; }
 .panel-brand-eyebrow {
   font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 400;
   letter-spacing: 0.55em; text-transform: uppercase; color: var(--accent-gold);
-  margin-bottom: 2rem; display: block;
+  margin-bottom: 1rem; display: block;
 }
 .panel-brand-name {
   font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.2vw, 2.6rem);
   font-weight: 700; line-height: 1.1; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text); margin-bottom: 2.5rem;
+  color: var(--text); margin-bottom: 1rem;
 }
 .panel-brand-location {
   font-family: 'Montserrat', sans-serif; font-size: 0.62rem; font-weight: 300;
