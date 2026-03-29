@@ -1,0 +1,5 @@
+.vercel
+.next
+node_modules
+.DS_Store
+stitch_shopping_cart

@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cristal Matcha - Premium Japanese Matcha in Norwich. Experience authentic ceremonial grade matcha from Uji, Japan at Royal Arcade.">
+    <meta name="keywords" content="matcha, japanese tea, norwich, royal arcade, ceremonial grade, green tea, uji matcha">
+    <title>Cristal Matcha - Premium Japanese Matcha | Norwich</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+    <meta name="theme-color" content="#5EBC04">
+    
+    <!-- Instagram verification -->
+    <meta property="instagram:creator" content="@cristalmatcha">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Cristal Matcha - Premium Japanese Matcha">
+    <meta property="og:description" content="Experience authentic ceremonial grade matcha from Uji, Japan at Norwich's Royal Arcade">
+    <meta property="og:image" content="https://cristalmatcha.com/images/og-image.jpg">
+    <meta property="og:url" content="https://cristalmatcha.com">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #5EBC04;
+            --dark-green: #4A9503;
+            --light-green: #7FD334;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-gray: #F5F5F5;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Logo - Centered */
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .logo h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--primary-green);
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+
+        /* Hamburger Menu - Left side */
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle span:nth-child(2) {
+            width: 20px;
+        }
+
+        .menu-toggle:hover span {
+            background: var(--primary-green);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Cart Link - Right side */
+        .cart-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-link:hover {
+            color: var(--primary-green);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* Fullscreen Menu */
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .fullscreen-menu.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        .menu-close {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 300;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .menu-close:hover {
+            color: var(--primary-green);
+            border-color: var(--primary-green);
+            background: rgba(94, 188, 4, 0.1);
+            transform: rotate(90deg);
+        }
+        
+        .menu-close:active {
+            transform: scale(0.9);
+        }
+
+        .menu-content {
+            display: flex;
+            gap: 8rem;
+            color: white;
+        }
+
+        .menu-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .menu-column h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .menu-column a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .menu-column a::after {
+            content: '→';
+            position: absolute;
+            right: -25px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-column a:hover {
+            color: var(--primary-green);
+            transform: translateX(10px);
+        }
+
+        .menu-column a:hover::after {
+            opacity: 1;
+            right: -30px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom, var(--white), var(--off-white));
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h2 span {
+            color: var(--primary-green);
+            font-weight: 500;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: white;
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-green);
+            border-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(94, 188, 4, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(94, 188, 4, 0.2);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--primary-green);
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        section:nth-child(even) {
+            background: var(--off-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .about-image {
+            height: 450px;
+            background: var(--light-gray);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: var(--primary-green);
+            opacity: 0.5;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 280px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-green);
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-category {
+            color: var(--primary-green);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .add-to-cart {
+            background: transparent;
+            color: var(--primary-green);
+            border: 1px solid var(--primary-green);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover:not(:disabled) {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .add-to-cart:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .benefit-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Store Section */
+        .store-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .store-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .map-container {
+            height: 400px;
+            background: var(--light-gray);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4ead4 100%);
+            padding: 4rem 0;
+            color: var(--text-dark);
+            text-align: center;
+            border-top: 1px solid rgba(94, 188, 4, 0.1);
+            border-bottom: 1px solid rgba(94, 188, 4, 0.1);
+        }
+
+        .newsletter h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            color: var(--text-dark);
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(94, 188, 4, 0.3);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .newsletter-form input::placeholder {
+            color: var(--text-light);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .newsletter-form button {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(94, 188, 4, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--light-gray);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-image {
+                height: 300px;
+                font-size: 6rem;
+            }
+            
+            .about-grid,
+            .store-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .menu-content {
+                flex-direction: column;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .menu-column a::after {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <!-- Left - Hamburger Menu -->
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Center Logo -->
+            <a href="index.html" class="logo">
+                <h1>Cristal Matcha</h1>
+                <div class="logo-tagline">FROM UJI TO NORWICH</div>
+            </a>
+            
+            <!-- Right - Cart -->
+            <a href="#" class="cart-link">
+                Cart
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Fullscreen Menu -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+            <span style="pointer-events: none;">×</span>
+        </button>
+        <div class="menu-content">
+            <div class="menu-column">
+                <h3>Shop</h3>
+                <a href="#products">All Products</a>
+                <a href="ceremonial-grade.html">Ceremonial Grade</a>
+                <a href="#products">Daily Matcha</a>
+                <a href="#products">Accessories</a>
+            </div>
+            <div class="menu-column">
+                <h3>Learn</h3>
+                <a href="#about">Our Story</a>
+                <a href="blog.html">Blog</a>
+                <a href="health-benefits.html">Health Benefits</a>
+                <a href="ceremonial-grade.html">Tea Ceremony</a>
+            </div>
+            <div class="menu-column">
+                <h3>Visit</h3>
+                <a href="#store">Royal Arcade Store</a>
+                <a href="#store">Opening Hours</a>
+                <a href="#store">Workshops</a>
+                <a href="#store">Contact Us</a>
+            </div>
+            <div class="menu-column">
+                <h3>Connect</h3>
+                <a href="https://instagram.com/cristalmatcha" target="_blank">Instagram</a>
+                <a href="#">Newsletter</a>
+                <a href="#">FAQ</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h2>Pure Japanese <span>Matcha</span> Experience</h2>
+                <p class="hero-tagline">FROM UJI TO NORWICH</p>
+                <p>Discover the ancient tradition of ceremonial-grade matcha, sourced directly from the pristine tea gardens of Uji, Japan, now available in Norwich's historic Royal Arcade.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Shop Collection</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                🍵
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>The Art of Matcha</h2>
+                <p>From Uji's tea gardens to Norwich's Royal Arcade</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <h3>From Uji to Norwich</h3>
+                    <p>At Cristal Matcha, we bridge two worlds - the ancient tea gardens of Uji, Japan and the vibrant culture of Norwich, Norfolk. Our partnership with fifth-generation tea farmers ensures that every batch meets the highest standards of Japanese tea ceremony.</p>
+                    <p>Located in the historic Royal Arcade, our Norwich boutique brings the authentic matcha experience to East Anglia.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>100% Organic</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>Stone-Ground</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>First Harvest</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>Lab Tested</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in">
+                    抹茶
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Collection</h2>
+                <p>Carefully curated selection of premium matcha grades</p>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why Choose Matcha?</h2>
+                <p>Discover the remarkable benefits of daily matcha consumption</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Sustained Energy</h3>
+                    <p class="benefit-text">Natural caffeine with L-theanine for calm focus</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🧘</div>
+                    <h3 class="benefit-title">Mental Clarity</h3>
+                    <p class="benefit-text">Enhances concentration and mindfulness</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">💪</div>
+                    <h3 class="benefit-title">Antioxidants</h3>
+                    <p class="benefit-text">137x more than regular green tea</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🌿</div>
+                    <h3 class="benefit-title">Detoxifying</h3>
+                    <p class="benefit-text">Chlorophyll helps eliminate toxins</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <section class="store" id="store">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Visit Our Boutique</h2>
+                <p>Experience authentic Japanese tea ceremony in the heart of Norwich</p>
+            </div>
+            <div class="store-grid">
+                <div class="store-info fade-in">
+                    <h3>Cristal Matcha Norwich</h3>
+                    <div class="info-card">
+                        <h4>📍 Location</h4>
+                        <p>Royal Arcade<br>Norwich NR2 1NQ<br>United Kingdom</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🕐 Opening Hours</h4>
+                        <p>Monday - Saturday: 9:00 - 16:00<br>Sunday: 10:00 - 15:00</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>☕ Experiences</h4>
+                        <p>Tea Ceremonies • Matcha Workshops • Private Tastings</p>
+                    </div>
+                </div>
+                <div class="map-container fade-in">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=1.2900%2C52.6280%2C1.2980%2C52.6320&layer=mapnik&marker=52.6300%2C1.2940"
+                        style="border: 0;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>Join Our Tea Circle</h3>
+            <p>Receive exclusive offers, recipes, and matcha wisdom</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Cristal Matcha</h3>
+                <p>Bringing authentic Japanese matcha tradition to Norfolk. Every cup is a journey from Uji to Norwich.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/cristalmatcha" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#products">All Products</a></li>
+                    <li><a href="ceremonial-grade.html">Ceremonial Grade</a></li>
+                    <li><a href="#products">Culinary Grade</a></li>
+                    <li><a href="#products">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="health-benefits.html">Health Benefits</a></li>
+                    <li><a href="ceremonial-grade.html">Tea Ceremony</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#store">Contact Us</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Cristal Matcha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Products data
+        const products = [
+            {
+                id: 1,
+                name: "Ceremonial Premium",
+                category: "CEREMONIAL",
+                description: "Our finest grade for traditional tea ceremony",
+                price: "Coming Soon",
+                badge: "Bestseller"
+            },
+            {
+                id: 2,
+                name: "Daily Zen",
+                category: "PREMIUM",
+                description: "Perfect balance for everyday enjoyment",
+                price: "Coming Soon"
+            },
+            {
+                id: 3,
+                name: "Morning Ritual",
+                category: "CEREMONIAL",
+                description: "Smooth and energizing start to your day",
+                price: "Coming Soon",
+                badge: "Popular"
+            },
+            {
+                id: 4,
+                name: "Culinary Grade",
+                category: "CULINARY",
+                description: "Ideal for lattes, smoothies and baking",
+                price: "Coming Soon"
+            },
+            {
+                id: 5,
+                name: "Imperial Reserve",
+                category: "SUPREME",
+                description: "Limited edition from ancient tea gardens",
+                price: "Coming Soon",
+                badge: "Exclusive"
+            },
+            {
+                id: 6,
+                name: "Harvest Moon",
+                category: "SEASONAL",
+                description: "Autumn harvest with complex notes",
+                price: "Coming Soon",
+                badge: "Limited"
+            }
+        ];
+
+        // Initialize products
+        function initProducts() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = products.map(product => `
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        🍵
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-footer">
+                            <span class="product-price">${product.price}</span>
+                            <button class="add-to-cart" disabled>Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu elements
+            const menuToggle = document.getElementById('menuToggle');
+            const fullscreenMenu = document.getElementById('fullscreenMenu');
+            const menuClose = document.getElementById('menuClose');
+
+            // Debug log
+            console.log('Menu elements found:', {
+                toggle: !!menuToggle,
+                menu: !!fullscreenMenu,
+                close: !!menuClose
+            });
+
+            // Open menu
+            if (menuToggle && fullscreenMenu) {
+                menuToggle.onclick = function(e) {
+                    e.preventDefault();
+                    console.log('Opening menu');
+                    fullscreenMenu.classList.add('active');
+                    menuToggle.classList.add('active');
+                    return false;
+                };
+            }
+
+            // Close menu with X button - using onclick for better compatibility
+            if (menuClose && fullscreenMenu) {
+                menuClose.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Closing menu with X');
+                    fullscreenMenu.classList.remove('active');
+                    if (menuToggle) menuToggle.classList.remove('active');
+                    return false;
+                };
+            }
+            
+            // Alternative close method - clicking on the menu background
+            if (fullscreenMenu) {
+                fullscreenMenu.onclick = function(e) {
+                    if (e.target === fullscreenMenu) {
+                        console.log('Closing menu - clicked background');
+                        fullscreenMenu.classList.remove('active');
+                        if (menuToggle) menuToggle.classList.remove('active');
+                    }
+                };
+            }
+            
+            // Close menu when clicking on links
+            document.querySelectorAll('.menu-column a').forEach(link => {
+                link.onclick = function() {
+                    console.log('Closing menu - link clicked');
+                    if (fullscreenMenu) fullscreenMenu.classList.remove('active');
+                    if (menuToggle) menuToggle.classList.remove('active');
+                };
+            });
+            
+            // Close menu with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && fullscreenMenu && fullscreenMenu.classList.contains('active')) {
+                    console.log('Closing menu with ESC');
+                    fullscreenMenu.classList.remove('active');
+                    if (menuToggle) menuToggle.classList.remove('active');
+                }
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Initialize products
+            initProducts();
+
+            // Fade in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Newsletter
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            e.target.reset();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

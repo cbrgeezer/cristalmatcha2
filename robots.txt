@@ -1,0 +1,99 @@
+# Cristal Matcha - Robots.txt
+# Website: https://cristalmatcha.com
+# Contact: hello@cristalmatcha.com
+
+# Allow all search engines to crawl the website
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /api/
+Disallow: /tmp/
+Disallow: /*.pdf$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*page=
+Disallow: /search?
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+Allow: /*.woff
+Allow: /*.woff2
+Crawl-delay: 0
+
+# Specific rules for Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+Disallow: /private/images/
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Rogerbot
+Disallow: /
+
+# Block AI/GPT crawlers (optional - uncomment if you don't want AI to crawl)
+# User-agent: GPTBot
+# Disallow: /
+
+# User-agent: ChatGPT-User
+# Disallow: /
+
+# User-agent: CCBot
+# Disallow: /
+
+# User-agent: anthropic-ai
+# Disallow: /
+
+# User-agent: Claude-Web
+# Disallow: /
+
+# Sitemap location
+Sitemap: https://cristalmatcha.com/sitemap.xml
+
+# Additional sitemaps (if needed in future)
+# Sitemap: https://cristalmatcha.com/products-sitemap.xml
+# Sitemap: https://cristalmatcha.com/blog-sitemap.xml
+# Sitemap: https://cristalmatcha.com/image-sitemap.xml
+
+# Crawl-delay for all other bots (in seconds)
+User-agent: *
+Crawl-delay: 2
+
+# Host preference (optional - specify preferred domain)
+Host: cristalmatcha.com
+
+# End of robots.txt

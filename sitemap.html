@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitemap - Navigate all pages of Cristal Matcha Norwich">
+    <meta name="keywords" content="sitemap, site map, cristal matcha, navigation">
+    <title>Sitemap | Cristal Matcha Norwich</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #5EBC04;
+            --dark-green: #4A9503;
+            --light-green: #7FD334;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-gray: #F5F5F5;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-simple {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, var(--white), var(--off-white));
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .logo-link {
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            font-weight: 400;
+        }
+
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .sitemap-section {
+            background: var(--off-white);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .sitemap-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-green);
+        }
+
+        .sitemap-links {
+            list-style: none;
+        }
+
+        .sitemap-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sitemap-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .sitemap-links a::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-links a:hover {
+            color: var(--primary-green);
+            transform: translateX(10px);
+        }
+
+        .sitemap-links a:hover::before {
+            opacity: 1;
+            left: -15px;
+        }
+
+        .current-page {
+            background: var(--primary-green);
+            color: white !important;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        footer {
+            background: var(--light-gray);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(94, 188, 4, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Header -->
+    <header class="header-simple">
+        <a href="index.html" class="logo-link">
+            <div class="logo-text">Cristal Matcha</div>
+            <div class="logo-tagline">FROM UJI TO NORWICH</div>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Sitemap</h1>
+        <p class="subtitle">Navigate through all pages of Cristal Matcha</p>
+
+        <div class="sitemap-grid">
+            <!-- Main Pages -->
+            <div class="sitemap-section">
+                <h2>Main Pages</h2>
+                <ul class="sitemap-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#store">Royal Arcade Store</a></li>
+                    <li><a href="index.html#products">Featured Products</a></li>
+                </ul>
+            </div>
+
+            <!-- Shop -->
+            <div class="sitemap-section">
+                <h2>Shop</h2>
+                <ul class="sitemap-links">
+                    <li><a href="index.html#products">All Products</a></li>
+                    <li><a href="ceremonial-grade.html">Ceremonial Grade</a></li>
+                    <li><a href="#">Premium Grade</a></li>
+                    <li><a href="#">Culinary Grade</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Gift Sets</a></li>
+                </ul>
+            </div>
+
+            <!-- Learn -->
+            <div class="sitemap-section">
+                <h2>Learn</h2>
+                <ul class="sitemap-links">
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="health-benefits.html">Health Benefits</a></li>
+                    <li><a href="ceremonial-grade.html#tea-ceremony">Tea Ceremony</a></li>
+                    <li><a href="#">Matcha Recipes</a></li>
+                    <li><a href="#">How to Prepare</a></li>
+                </ul>
+            </div>
+
+            <!-- Customer Service -->
+            <div class="sitemap-section">
+                <h2>Customer Service</h2>
+                <ul class="sitemap-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="#">Wholesale Inquiries</a></li>
+                </ul>
+            </div>
+
+            <!-- Visit Us -->
+            <div class="sitemap-section">
+                <h2>Visit Us</h2>
+                <ul class="sitemap-links">
+                    <li><a href="index.html#store">Store Location</a></li>
+                    <li><a href="index.html#store">Opening Hours</a></li>
+                    <li><a href="#">Workshops & Events</a></li>
+                    <li><a href="#">Private Ceremonies</a></li>
+                    <li><a href="#">Group Bookings</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="sitemap-section">
+                <h2>Legal</h2>
+                <ul class="sitemap-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="sitemap.xml">XML Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect -->
+            <div class="sitemap-section">
+                <h2>Connect</h2>
+                <ul class="sitemap-links">
+                    <li><a href="https://instagram.com/xx_vena_xx" target="_blank">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Newsletter Signup</a></li>
+                    <li><a href="#">Press & Media</a></li>
+                </ul>
+            </div>
+
+            <!-- Coming Soon -->
+            <div class="sitemap-section">
+                <h2>Coming Soon</h2>
+                <ul class="sitemap-links">
+                    <li><a href="#">Online Shop (Feb 2026)</a></li>
+                    <li><a href="#">Subscription Service</a></li>
+                    <li><a href="#">Matcha Academy</a></li>
+                    <li><a href="#">Corporate Events</a></li>
+                    <li><a href="#">Loyalty Program</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="back-home">Back to Homepage</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Cristal Matcha. All rights reserved. | Royal Arcade, Norwich NR2 1NQ</p>
+    </footer>
+</body>
+</html>
